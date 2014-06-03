@@ -1,6 +1,7 @@
 package edu.kit.ipd.swt1.Lecture;
 
 import java.util.Observer;
+import java.util.Observable;
 
 /**
  * Created by Sebastian Schindler on 03.06.2014.
@@ -39,5 +40,26 @@ public class Student implements Observer {
         this.isMale = male;
         this.description = description;
         this.state = null;
+    }
+
+
+    public void update(Observable prof, Object arg) {
+        String chapter = (String) arg;
+        if (chapter.equals("Definition")) {
+            this.setState("Writing");
+            return;
+        }
+        if (chapter.equals("Example")) {
+            this.setState("Listening");
+            return;
+        }
+        if (chapter.equals("Pattern")) {
+            if (this.isMale()) {
+                this.setState("Snoring");
+            } else this.setState("Yawning");
+            return;
+        }
+        System.err.println("Invalid chapter");
+        System.exit(1);
     }
 }

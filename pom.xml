@@ -86,10 +86,6 @@
         </pluginManagement>
     </build>
 
-    <scm>
-        <connection></connection>
-        <url></url>
-    </scm>
 
     <reporting>
         <plugins>

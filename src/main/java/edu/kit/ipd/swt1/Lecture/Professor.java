@@ -6,7 +6,7 @@ import java.util.Observable;
  * Created by Sebastian Schindler on 03.06.2014.
  */
 public class Professor extends Observable{
-    private String state;
+    private String chapter;
     private String description;
 
     public String getDescription() {
@@ -15,19 +15,22 @@ public class Professor extends Observable{
 
     public void setDescription(String description) {
         this.description = description;
+        this.setChanged();
     }
 
-    public String getState() {
-        return state;
+    public String getChapter() {
+        return chapter;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setChapter(String chapter) {
+        this.chapter = chapter;
+        this.setChanged();
     }
 
 
     public Professor(String description) {
         this.description = description;
-        this.state = null;
+        this.chapter = null;
+        this.setChanged();
     }
 }
